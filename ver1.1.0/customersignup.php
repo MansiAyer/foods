@@ -1,32 +1,23 @@
 <html>
   <head>
-    <title> Signup | Le Félicité</title>
+    <title> Signup </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="css/fixed.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="font/flaticon.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
+
+  
 
     <style type="text/css">
       body {
-      font-family: sans-serif;
-      background-color: #dddddd;
-      text-align: center;
-      }
-      #toTop{
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 30px;
-        z-index: 99;
-        border: none;
-        outline: none;
-        background-color: white;
-        color: #555555;
-        cursor: pointer;
-        padding: 15px;
-        border-radius: 40px;
-      }
-      #toTop:hover {
-        background-color: darkgreen;
-        color: white;
-      }
+          font-family: sans-serif;
+          background: #eeeeee url(https://assets.yellowtrace.com.au/wp-content/uploads/2013/07/APOLLO-Sydney-by-George-Livissianis-Yellowtrace-01.jpg) fixed;
+          text-align: center;
+        }
+      
       .bg-4{
         background-color: #2f2f2f;
         color: #ffffff;
@@ -36,25 +27,46 @@
   </head>
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" style="height: 70px; background-color: white; box-shadow: 0px 0px 2px #000000;">
-    <a class="navbar-brand" href="index.html">Le Felicite</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll " style="border-bottom: 5px solid #ceb829;font-size:20px">
+    <div class="container-fluid " id="navbarResponsive">
+
+      <div class="header_content ">
+        <div class="logo">
+          <a href="index.php">
+            <div style="font-size: 33px;line-height: 1;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+            <div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.600em;line-height: 0.80;margin-top: 12px;">restaurant</div>
+          </a>
+        </div>
+      </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+    <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="myNavbar" style="width: 100%;">
-      <ul class="navbar-nav mr-auto" style="width: 100%;">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Back to home</a>
-        </li>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto" style="padding-left:10px;color:white">
+    
+      <li class="nav-item" style="padding-right:15px;">
+        <a class="nav-link" href="index.php" >HOME</a>
+      </li>
+      <li class="nav-item" style="padding-right:15px">
+        <a class="nav-link" href="booking.php" >RESERVATION</a>
+      </li>
+       <li class="nav-item" style="padding-right:15px" >
+        <a class="nav-link" href="order.php">MENU</a>
+      </li>
+       <li class="nav-item" style="padding-right:15px">
+        <a class="nav-link" href="gal.php">GALLERY</a>
+      </li>
       </ul>
     </div>
+   </div>
   </nav>
 
 
 
-    <div class="container" style="padding-top: 2%; text-align: left;">
+    <div class="container" style="padding-top: 7%; text-align: left;">
     <div class="jumbotron bg-4">
-     <h1>Get started by creating your account</h1>
+     <h1 style="margin-left: 30px;">Get started by creating your account</h1>
      <br><br>
 
       <div class="container" style="margin-bottom: 2%;">
@@ -66,9 +78,9 @@
          
           <div class="row">
           <div class="form-group" style=" width: 30%;">
-            <label for="fullname"><span class="text-danger" style="margin-right: 5px;">*</span> Full Name: </label>
+            <label for="fullname"><span class="text-danger" style="margin-right: 5px;">*</span> Full Name: <span class="text-muted">(alphabets only)</span></label>
             <div class="input-group" >
-              <input class="form-control" id="fullname" type="text" name="fullname" placeholder="Your Full Name" required="" autofocus="">
+              <input class="form-control" id="fullname" type="text" pattern="[A-Za-z\s]+" name="fullname" placeholder="Your Full Name" required="" autofocus="">
               
             </div>           
           </div>
@@ -88,7 +100,7 @@
           <div class="form-group" style=" width: 30%;">
             <label for="email"><span class="text-danger" style="margin-right: 5px;">*</span> Email: </label>
             <div class="input-group">
-              <input class="form-control" id="email" type="email" name="email" placeholder="Email" required="">
+              <input class="form-control" id="email" type="email" pattern="[A-Za-z][a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" placeholder="Email" required="">
               
             </div>           
           </div>
@@ -98,7 +110,7 @@
           <div class="form-group" style=" width: 20%;">
             <label for="contact"><span class="text-danger" style="margin-right: 5px;">*</span> Contact: </label>
             <div class="input-group">
-              <input class="form-control" id="contact" type="text" name="contact" placeholder="Contact" required="">
+              <input class="form-control" id="contact" type="text" pattern="[0-9]{10}" name="contact" placeholder="Contact" required="">
               
               
             </div>           
@@ -129,13 +141,13 @@
         <br>
 
         <div class="row">
-          <div class="form-group col-xs-4">
+          <div class="form-group ">
               <button class="btn btn-primary" type="submit">Submit</button>
           </div>
 
         </div>
-        <label>or</label> <br>
-       <label><a href="customerlogin.php">Have an account? Login.</a></label>
+        <label style="margin-left: 5px;">or</label> <br>
+       <label style="margin-left: 5px;"><a href="customerlogin.php" style="color:white; text-decoration: underline;">Have an account? Login.</a></label>
 
         </form>
 

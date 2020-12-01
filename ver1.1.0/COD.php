@@ -15,15 +15,23 @@ unset($_SESSION["cart"]);
     <title> Order complete </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"  href="style.css">
+
+    <link rel="stylesheet"  href="css/fixed.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font/flaticon.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
+  
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     
     <style type="text/css">
       body {
-        font-family: sans-serif;
-        background-color: #dddddd;
-        text-align: center;
+          font-family: sans-serif;
+          background: #eeeeee url(https://assets.yellowtrace.com.au/wp-content/uploads/2013/07/APOLLO-Sydney-by-George-Livissianis-Yellowtrace-01.jpg) fixed;
+          text-align: center;
         }
         
       .bg-4{
@@ -33,15 +41,36 @@ unset($_SESSION["cart"]);
     </style>
   </head>
   <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" style="height: 70px; background-color: white; box-shadow: 0px 0px 2px #000000;">
-    <a class="navbar-brand" href="index.html">Le Felicite</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+
+  <nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll " style="border-bottom: 5px solid #ceb829;font-size:20px">
+    <div class="container-fluid " id="navbarResponsive">
+
+      <div class="header_content ">
+        <div class="logo">
+          <a href="index.php">
+            <div style="font-size: 33px;line-height: 1;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+            <div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.600em;line-height: 0.80;margin-top: 12px;">restaurant</div>
+          </a>
+        </div>
+      </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+    <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="myNavbar" style="width: 100%;">
-    <ul class="navbar-nav mr-auto" style="width: 100%;">
-      <li class="nav-item align-middle">
-        <a class="nav-link" href="index.html">Back to home</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto" style="padding-left:10px;color:white">
+    
+      <li class="nav-item" style="padding-right:15px;">
+        <a class="nav-link" href="index.php" >HOME</a>
+      </li>
+      <li class="nav-item" style="padding-right:15px">
+        <a class="nav-link" href="booking.php" >RESERVATION</a>
+      </li>
+       <li class="nav-item" style="padding-right:15px" >
+        <a class="nav-link" href="order.php">MENU</a>
+      </li>
+       <li class="nav-item" style="padding-right:15px">
+        <a class="nav-link" href="gal.php">GALLERY</a>
       </li>
   
 <?php
@@ -49,13 +78,12 @@ unset($_SESSION["cart"]);
 //USER WHO HAS LOGGED IN
 if (isset($_SESSION['login_user2'])) {
   ?>
-        <div class="container px-0"> 
-    <li class="nav-item active"><a class="nav-link" href="logout_u.php"> Log Out </a></li>  
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#"> <b style="letter-spacing: 1px;"> Signed in as <?php echo $_SESSION['login_user2']; ?> </b> </a>
+        <li class="nav-item" style="padding-right:15px"><a class="nav-link" href="logout_u.php"> Log Out </a></li>  
+    <li class="nav-item" style="padding-right:15px">
+      <a class="nav-link disabled" href="#"> <b style="color:#ceb829"><i class="fas fa-user-circle" style="font-size:30px"></i></span> <?php echo $_SESSION['login_user2']; ?> </b> </a>
     </li>
-    <li class="nav-item clickable" onclick="toggleCart()">
-      <span class="nav-link active">  <img src="https://www.freeiconspng.com/uploads/grocery-basket-icon-1.png" height="30px" width="30px"> 
+    <li class="nav-item clickable" onclick="toggleCart()" >
+      <span class="nav-link active">  <img src="https://www.materialui.co/materialIcons/action/shopping_basket_white_192x192.png" height="30px" width="30px"> 
         (<?php
         if(isset($_SESSION["cart"])){
           $count = count($_SESSION["cart"]); 
@@ -66,10 +94,11 @@ if (isset($_SESSION['login_user2'])) {
          ?>) 
        </span>
         </li>
-      </div>
       </ul>
       </div>
+    </div>
     </nav>
+
 
   <?php        
 }
@@ -77,23 +106,7 @@ if (isset($_SESSION['login_user2'])) {
 //USER WHO HASN'T LOGGED IN
 else {
   ?>
-  <div class="container px-0">
-  <li class="nav-item">
-    <a class="nav-link active" href="customersignup.php">Register/Login</a>
-  </li>
-  <li class="nav-item clickable" onclick="toggleCart()">
-      <span class="nav-link active">  <img src="https://www.freeiconspng.com/uploads/grocery-basket-icon-1.png" height="30px" width="30px"> 
-        (<?php
-        if(isset($_SESSION["cart"])){
-          $count = count($_SESSION["cart"]); 
-          echo "$count"; 
-        }
-        else
-          echo "0";
-         ?>) 
-       </span>
-        </li>
-      </div>
+  
   </ul>
    </div>
 
@@ -103,18 +116,17 @@ else {
 <?php
 }
 ?>
-  
 
-
-
-        <div class="container">
+        <div class="container" style="background-color: rgba(238,238,238,0.6); padding-bottom: 180px; margin-top: 75px;">
           <div class="jumbotron bg-4">
-            <h1 class="text-center" style="color: green;"><span class="glyphicon glyphicon-ok-circle"></span> Order Placed Successfully.</h1>
+            <h1 class="text-center" style="color: white;"><span class="glyphicon glyphicon-ok-circle"> </span> Order Placed Successfully.</h1>
           </div>
+          <br><br><br><br>
+          <h2 class="text-center" > Thank you for Ordering!</h2>
         </div>
         <br>
 
-<h2 class="text-center"> Thank you for Ordering!</h2>
+
 
 
         </body>

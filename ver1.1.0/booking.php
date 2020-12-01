@@ -16,11 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     <title>Book Now</title>
     <link rel="icon" type="image/png" href=".png">
+
 </head>
 
 <body data-spy="scroll" data-target="#navbarResponsive" style="background-color: black;overflow-x: hidden;width: 100%;margin-left: 0%;margin-right:0%">
@@ -31,8 +34,8 @@
 			<div class="header_content ">
 				<div class="logo">
 					<a href="#">
-						<div style="font-size: 30px;line-height: 0.75;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
-						<div style="font-size: 12px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.680em;line-height: 0.75;margin-top: 12px;">restaurant</div>
+						<div style="font-size: 33px;line-height: 0.75;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+						<div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.680em;line-height: 0.80;margin-top: 12px;">restaurant</div>
 					</a>
 				</div>
 			</div>
@@ -60,80 +63,17 @@
 				</li>
 				<li class="nav-item" style="padding-right:15px">
 					<a class="nav-link" href="#" >CART</a>
-				  </li>
+				  </li>-->
 			  </ul>
 			</div>
 			</div>
-			</nav>-->
+			</nav>
 			
-                        <?php
-            if(isset($_SESSION['login_user1'])){
-            ?>
-                <span class="nav navbar-nav navbar-right" style="color: black;">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-                    <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-                    <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
-                </span>
-            <?php 
-            }
-
-
-            //USER WHO HAS LOGGED IN
-            else if (isset($_SESSION['login_user2'])) {
-            ?>
-                    
-
-                    <li class="nav-item" style="padding-right:15px">
-                        <a class="nav-link" href="logout_u.php">LOG OUT</a>
-                </li>  
-                
-                <li class="nav-item" style="padding-right:15px">
-                <a class="nav-link disabled" href="#"> <b style="color:#ceb829">Signed in as <?php echo $_SESSION['login_user2']; ?> </b></a>
-                </li>
-
-                <!--<li class="nav-item clickable" onclick="toggleCart()">
-                <span class="nav-link active">  <img src="https://www.freeiconspng.com/uploads/grocery-basket-icon-1.png" height="30px" width="30px" > 
-                    (<?php
-                    if(isset($_SESSION["cart"])){
-                    $count = count($_SESSION["cart"]); 
-                    echo "$count"; 
-                    }
-                    else
-                    echo "0";
-                    ?>) 
-                </span>
-                    </li> -->
-
-                
-                </ul>
-                </div>
-                </nav>
-                <?php        
-            }
-                //USER WHO HASN'T LOGGED IN
-            else {
-            ?>
-
-            <li class="nav-item" style="padding-right:15px">
-                <a class="nav-link" href="customerlogin.php">LOG IN</a>
-            </li>
-
-            <!-- <li class="nav-item" style="padding-right:15px">
-                <a class="nav-link" href="#">CART</a>
-            </li> -->
-            </ul>
-            </div>
-
-                </div>
-                </nav>
-                <?php
-            }
-            ?>
 
 
             <div class="para2">
                 <div class="caption">
-                    <span class="text-block" style="font-size:3vw;"><b>R</b>ESER<b>V</b>ATI<b>O</b>N</span>
+                    <span class="text-block" style="font-size:4vw;"><b>R</b>ESER<b>V</b>ATI<b>O</b>N</span>
                 </div>
             </div>
     </div>  
@@ -188,8 +128,8 @@
                 </div>
             </div>
             <br><br><br><center>
-        <p style="letter-spacing:2px">FORMAL   CASUAL   OUTDOOR   PRIVATE<br>TABLES</p></center>    
-        <br><br><br><br><center>
+        <p style="letter-spacing:2px;font-size:17px">FORMAL   CASUAL   OUTDOOR   PRIVATE<br>TABLES</p></center>    
+        <br><br><br><br>
       <!--  <p style="font-size:30px;background-color:white;">RESERVE YOUR TABLE HERE</p></center>-->
     </div>
         
@@ -211,18 +151,20 @@
                             <div class="form-row"> 
                                 <div class="col-md-7 mx-5 my-2 p-5">
                                            
-                                <input placeholder="First Name" type="text" name="fName" required class="form-control my-3 p-1">
+                                <input placeholder="First Name" type="text" name="fName" id="name" required class="form-control my-3 p-1">
                                 
-                                <input placeholder="Last Name" type="text" name="lName" class="form-control my-3 p-1">
+                                <input placeholder="Last Name" type="text" name="lName"  class="form-control my-3 p-1">
                                 
-                                <input placeholder="Phone Number" type="text" name="pNumber" required class="form-control my-3 p-1">
+                                <input placeholder="Phone Number" type="text" name="pNumber" id="phone" required class="form-control my-3 p-1">
+
+                                <input placeholder="Email" type="email" name="email" id="email" class="form-control my-3 p-1">
                                
                                 <select name="t_type" required class="form-control my-3 p-1">   
                                     <option value="" disabled selected>BOOKING TYPE</option>
                                     <option value="Formal">Formal</option>
                                     <option value="Casual">Casual</option>
                                     <option value="Outdoor">Outdoor</option>
-                                    <option value="Private-hall">Private Room</option>
+                                    <option value="Private-Room">Private Room</option>
                                 </select>
 
                                 <select name="num_p" required class="form-control my-3 p-1">
@@ -236,11 +178,11 @@
 
                                 <select name="date" required class="form-control my-3 p-1">
                                     <option value="" disabled selected>DATE</option>
-                                    <option value="27-11">November 27,2020</option>
-                                    <option value="28-11">November 28,2020</option>
-                                    <option value="30-11">November 30,2020</option>
-                                    <option value="1-12">December 1,2020</option>
-                                    <option value="2-12">December 2,2020</option>
+                                    <option value="3-12-2020">December 3,2020</option>
+                                    <option value="4-12-2020">December 4,2020</option>
+                                    <option value="5-12-2020">December 5,2020</option>
+                                    <option value="7-12-2020">December 7,2020</option>
+                                    <option value="8-12-2020">December 8,2020</option>
                                 </select>
                                 
                              
@@ -259,13 +201,29 @@
                                 <button type="submit" value="submit" name="submit" class="btn1 my-3 p-1" >Book a Table</button>
                                 <?php
                                 $fNameErr = $pNumberErr= "";
-                                $fName = $pNumber = "";
+                                $fName = $pNumber = "";$error='';
                         
                                 if(isset($_POST['submit'])){
                                 
-                                    echo "<script>'yayyyyyyyyyyyyy'</script>";
-                                    $fName = $_POST['fName'];
-                                   
+                                    
+                                    $fName = trim($_POST['fName']);
+                                    $lName = $_POST['lName'];
+
+                                    if(strlen($fName)<=2)
+                                    {
+                                        $error .='Name should be more than 2 characters';
+                                    }
+                                    
+                                    if(!preg_match('/^[a-z ]+$/i', $fName)) {
+                                        $error .= 'Name missing or incorrect<br>';
+                                    }     
+                        
+                                    $pNumber = trim($_POST['pNumber']);
+                                     
+                                    if ($error) {
+                                        echo $error;       
+                                    }
+                                   else{
                                     $type = mysqli_real_escape_string($link,$_POST['t_type']);
                                     $peopl = mysqli_real_escape_string($link,$_POST['num_p']);
                                     $dat=mysqli_real_escape_string($link,$_POST['date']);
@@ -274,7 +232,7 @@
                                     $result = mysqli_query($link, $query); 
                                     if(mysqli_num_rows($result)>0){
                                         while($row=  mysqli_fetch_assoc($result)){
-                                            echo"<script>alert('This table is already BOOKED!')</script>";
+                                            echo"<script>alert('This table is already BOOKED. Please Select some other date or time!')</script>";
                                             
                                         }
                                            
@@ -282,29 +240,54 @@
                                     
 
                                     else{
+
+                                        $myuid = uniqid('la');
+                                       
                                         $insert_query = "INSERT INTO 
-                                    bookingtable ( 
+                                    bookingtable (  bookingID,
                                                     bookingType,
                                                     numPeople,
                                                     bookingDate,
                                                     bookingTime,
                                                     bookingFName,
                                                     bookingLName,
-                                                    bookingPNumber)
+                                                    emailID,
+                                                    bookingPNumber
+                                                   
+                                                    )
                                     VALUES (        
+                                                    '$myuid',
                                                     '".$_POST["t_type"]."',
                                                     '".$_POST["num_p"]."',
                                                     '".$_POST["date"]."',
                                                     '".$_POST["hour"]."',
                                                     '".$_POST["fName"]."',
                                                     '".$_POST["lName"]."',
+                                                    '".$_POST["email"]."',
                                                     '".$_POST["pNumber"]."')";
+                                                  
                                     mysqli_query($link,$insert_query);    
-                                    echo"<script>alert('Table Successfully Booked!');window.location.href='redirect.php';</script>"; 
-                                   
+                                    
+                                    $uemail= $_POST['email'];
+                                    $uname= $_POST['fName'];
+                                    $udate= $_POST['date'];
+                                    
+                                    $to_email = "$uemail";
+                                    $subject = "FINE DINING";
+                                    $body = "Hi, $uname you have booked a table at FINE DINING on $udate.Thank you for being with us $uname! Have a great day!
+                                    If you would like to cancel your booking here's your ID  $myuid .";
+                                    $headers = "From: thevenue@gmail.com";
+
+                                    if (mail($to_email, $subject, $body, $headers)) {
+                                    echo "<script>  alert ('Hey! $uname your table has been booked successfully !');window.location.href='redirect.php'</script>";
+                                      } 
+                                    else {
+                                        echo "<script>alert('failed to register...');</script>";
+                                        }
+                                    
     
                                     }
-                                    
+                                }  
                                 }
                                 ?> 
                                  
@@ -329,28 +312,39 @@
             </div>
         </div>    
         
-    <div class= "footer" id="footer" style="text-align: center;padding-top: 7%; color: white;">
+        <div class= "footer" id="footer" style="text-align: center;padding-top: 5%;font-size: 20px;background-color:black;color:white;">
 
-    <div class="container">
-        <div class="row"  style="background-color: black;">
-        <div class="col-md-3 fadeInUp ">
-        <div class="d-block text-center block-7 ">
+<div class="container">
+    <div class="row" style="background-color:black;color:white;">
+    <div class="col-md-3 fadeInUp ">
+    <div class="d-block text-center block-7 ">
+    <div class="d-flex justify-content-center align-items-center mb-5">
+        <B>VISIT US</B>
+    </div>
+    <div class="media-body">
+        Kamala Mills Compound,<br> Lower Parel,<br>Mumbai, Maharashtra 400013
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-3 fadeInUp">
+    <div class="d-block text-center block-7 ">
+    <div class="d-flex justify-content-center align-items-center mb-5">
+        <b>OPENING HOURS</b>
+    </div>
+    <div class="media-body">
+        Dine-in; Monday-Sunday<br>Lunch: 12pm – 4pm<br>Dinner: 7pm – 10pm 
+        </div>
+    </div>
+    </div>
+
+    <div class="col-md-3 fadeInUp">
+        <div class="d-block text-center block-7">
         <div class="d-flex justify-content-center align-items-center mb-5">
-            <B>VISIT US</B>
+            <b>DELIVERY</b>
         </div>
         <div class="media-body">
-            Kamala Mills Compound,<br> Lower Parel,<br>Mumbai, Maharashtra 400013
-            </div>
-        </div>
-        </div>
-
-        <div class="col-md-3 fadeInUp">
-        <div class="d-block text-center block-7 ">
-        <div class="d-flex justify-content-center align-items-center mb-5">
-            <b>OPENING HOURS</b>
-        </div>
-        <div class="media-body">
-            Dine-in; Monday-Sunday<br>Lunch: 12pm – 4pm<br>Dinner: 7pm – 10pm 
+            Monday – Thursday <br>12pm – 10pm<br>Friday – Sunday <br> 12pm – 10.30pm
             </div>
         </div>
         </div>
@@ -358,43 +352,33 @@
         <div class="col-md-3 fadeInUp">
             <div class="d-block text-center block-7">
             <div class="d-flex justify-content-center align-items-center mb-5">
-                <b>DELIVERY</b>
+                <b>GENERAL ENQUIRIES</b>
             </div>
             <div class="media-body">
-                Monday – Thursday <br>12pm – 10pm<br>Friday – Sunday <br> 12pm – 10.30pm
+                Call +919876543210,<BR>+911234567890,<br>+919876543210
                 </div>
             </div>
             </div>
-
-            <div class="col-md-3 fadeInUp">
-                <div class="d-block text-center block-7">
-                <div class="d-flex justify-content-center align-items-center mb-5">
-                    <b>GENERAL ENQUIRIES</b>
-                </div>
-                <div class="media-body">
-                    Call +919876543210,<BR>+911234567890,<br>+919876543210
-                    </div>
-                </div>
-                </div>
-            
-        </div>
-        <br><br>
-        <!--<a href="#" style="color: #77724b;"><i class="fab fa-facebook" style="font-size: 50px;margin-right: 30px;"></i></a>
-        <a href="#" style="color: #77724b;"><i class="fab fa-instagram" style="font-size: 50px;margin-right: 30px;"></i></a>
-        <a href="#" style="color: #77724b;"><i class="fab fa-twitter" style="font-size: 50px;"></i></a>-->
-        <br><br>
-        <div style="display: grid;">
-          <div style="grid-column:1;grid-row:1;">© 2020, The Venue</div>
-          <div style="grid-column:2;float: right;">Designed by Divhya, Lakshmi and Mansi</div>
-        </div>
-        <br><br>
-        </div>
+        
     </div>
+    <br><br>
+    <!--<a href="#" style="color: #77724b;"><i class="fab fa-facebook" style="font-size: 50px;margin-right: 30px;"></i></a>
+    <a href="#" style="color: #77724b;"><i class="fab fa-instagram" style="font-size: 50px;margin-right: 30px;"></i></a>
+    <a href="#" style="color: #77724b;"><i class="fab fa-twitter" style="font-size: 50px;"></i></a>-->
+    <br><br>
+    <div style="display: grid;">
+      <div style="grid-column:1;grid-row:1;">© 2020, The Venue</div>
+          <div style="grid-column:2;float: right;">Designed by Divhya, Mansi and Lakshmi</div>
+    </div>
+    <br><br>
+</div>
+</div>
     <script>
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
         }
-    </script>                    
+    </script> 
+                       
     <script src="scripts/jquery-3.3.1.min.js "></script>
     <script src="scripts/script.js "></script>
 

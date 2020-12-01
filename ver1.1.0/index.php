@@ -1,3 +1,26 @@
+<!--
+Lakshmi's changes:
+
+sending these two files,
+1.index.php
+2.style.css
+3.article.jpg
+
+A.please keep navbar same as index.php in every page.
+
+B.COPY 2 link of fontawesome from index.php and paste it in haeder section of all other pages.
+
+C.make the following change in php of every code except for RESERVATION("booking.php")
+as it is not going to have logout
+
+<a class="nav-link disabled" href="#"> <b style="letter-spacing: 1px;"> Signed in as <?php echo $_SESSION['login_user2']; ?> </b> </a>
+
+replace "signed in as " with " <i class="fas fa-user-circle" style="font-size:30px"></i> "
+
+D.couldnt bring all reviewbox to same height
+E.couldnt find appropriate photos either,-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +32,32 @@
 	<link rel="stylesheet"  href="css/fixed.css">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="font/flaticon.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
 </head>
-
+<!--16,22,23,227,239,250,345--> 
+<style>
+	.carousel-caption{
+  position: absolute;
+  top: 29%;
+}
+.box-default-decor {
+    display: inline-block;
+    content: '';
+    height: 0;
+    width: 60px;
+    border-top: 3px solid #ffffff;
+}
+</style>
 <body style="width: 100%;margin-left: 0%;margin-right:0%;margin: 0px;">
-
-	<nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll " style="border-bottom: 5px solid #ceb829;">
+	<nav class="navbar navbar-expand-md navbar-custom navbar-dark fixed-top show-on-scroll " style="border-bottom: 5px solid #ceb829;font-size:20px">
 		<div class="container-fluid " id="navbarResponsive">
 
 			<div class="header_content ">
 				<div class="logo">
 					<a href="#">
-						<div style="font-size: 30px;line-height: 0.75;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
-						<div style="font-size: 12px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.680em;line-height: 0.75;margin-top: 12px;">restaurant</div>
+						<div style="font-size: 33px;line-height: 1;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+						<div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.600em;line-height: 0.80;margin-top: 12px;">restaurant</div>
 					</a>
 				</div>
 			</div>
@@ -29,7 +66,7 @@
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav ml-auto" style="padding-left:10px;">
+		<ul class="navbar-nav ml-auto" style="padding-left:10px;color:white">
 		
 			<li class="nav-item active" style="padding-right:15px;">
 			  <a class="nav-link" href="index.php" >HOME</a>
@@ -78,7 +115,7 @@ else if (isset($_SESSION['login_user2'])) {
       </li>  
       
     <li class="nav-item" style="padding-right:15px">
-      <a class="nav-link disabled" href="#"> <b style="color:#ceb829">Signed in as <?php echo $_SESSION['login_user2']; ?> </b></a>
+      <a class="nav-link disabled" href="#"> <b style="color:#ceb829"><i class="fas fa-user-circle" style="font-size:30px"></i></span><?php echo $_SESSION['login_user2']; ?> </b></a>
     </li>
 
     <!--<li class="nav-item clickable" onclick="toggleCart()">
@@ -120,7 +157,7 @@ else {
 }
 ?>
 
-		<div class="d-flex flex-row align-items-center justify-content-start" id="home">
+		
 		<div id="myCarousel" class="carousel slide " data-ride="carousel" style="width: 100%;">
 
 			<ul class="carousel-indicators">
@@ -130,82 +167,100 @@ else {
 			</ul>
 			
 			<div class="carousel-inner">
-			  <div class="carousel-item active ">
-				<img src="https://luxurylaunches.com/wp-content/uploads/2015/08/Nusantao_Doha_-1.jpg" alt="Los Angeles" style="height:100%;width: 100%;">
+
+			<div class="carousel-item active" style="opacity:0.9">
+				<img src="https://images.squarespace-cdn.com/content/v1/5755bccb8259b515333df0e1/1466111941034-GIIKB6HB6ADZB2O0D7HW/ke17ZwdGBToddI8pDm48kJkf_0C__lNNupgcqn2I-MZ7gQa3H78H3Y0txjaiv_0faShnVfr-ySw9qgw5FxrvMyl6u_UOHo9iRUSqLVdbx65P_lPPFc9_1WpXke1CWsEjeoqS5JAWrnb1436X_b_yVRZPx-jNbZA_TaS-5l2nNKHsjEgMmtDE1gkcnVs3u0PDv_FnUDUDBQxMD5mbDx912g/Stocksy_comp_461838.jpg?format=2500w" alt="New York" style="height:100%;width: 100%;">
 			  </div>
-		  
-			  <div class="carousel-item ">
-				<img src="img/5.jpg" alt="Chicago" style="height:100%;width: 100%;" >
-			  </div>
-			  <div class="carousel-item">
-				<img src="img/1.jpg" alt="New York" style="height:100%;width: 100%;">
-			  </div>
+			
+			<div class="carousel-item " style="opacity:0.9">
+				<img src="img/toast.jpeg"  alt="Los Angeles" style="height:100%;width: 100%;">
 			</div>
+
+			  <div class="carousel-item " style="opacity:0.9">
+				<img src="https://i.pinimg.com/originals/74/5c/81/745c8113b9c5c3c5666a081ab968851b.jpg" alt="Chicago" style="height:100%;width: 100%;" >
+			</div>
+			
+			  
 			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
 			  <span class="carousel-control-prev-icon"></span>
 			</a>
 			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
 			  <span class="carousel-control-next-icon"></span>
 			</a>
-								
-		  </div>
-     </div>
 
-<div id="about us" style="background-color:white;">
-	<div class="aboutusrow">
-			
-		<div class="col-md-4 fadeInUp " >
-			<div class="d-block text-center block-6">
-			<div class="d-flex justify-content-center align-items-center mb-5">
-			<img src="img/intro_1.jpg" style="max-width: 100%;max-height: 100%;">
-			</div>
-			</div>
+			<div class="carousel-caption text-center" >
+				<div style="">
+				<div style="font-size: 33px;line-height: 2;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif; text-shadow: 1px 1px 5px black;">The Venue</div>
+				<div class="box-default-decor"></div>
+				<!--<div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.610em;line-height: 0.80;margin-top: 12px;text-align:center">restaurant</div>	-->
+				<p class="lead" style="font-size:28px;line-height: 2; text-shadow: 1px 1px 5px black;"><b>Our restaurant offers full-service dining with breathtaking views seen from our indoor covered patio and our outdoor sundeck.</b> </p>
+				</div>
+              </div>
+			  </div>
+		  </div>
+
+
+<div class="container" id="about us" style="background-color:white;padding-top:5%;padding-bottom:5%;">
+    <div class="row" style="padding-left:0%;padding-right:0%;">
+
+		<div class="col-md-4">
+		<div class="d-block text-center block-6">
+		<div class="d-flex justify-content-center align-items-center mb-5">
+        <img src="img/intro_1.jpg" style="max-width:100%;max-height:100%">
 		</div>
-	
-		<div class="col-md-4 fadeInUp" >
-			<div class="d-block text-center block-6 ">
-			<div class="d-flex justify-content-center align-items-center mb-5">
-				<img src="img/intro_2.jpg" style="max-width: 100%;max-height: 100%;">
-			</div>
-			</div>
 		</div>
-	
-		<div class="col-md-4 fadeInUp" >
-			<div class="d-block text-center block-6 ">
-			<div class="d-flex justify-content-center align-items-center mb-5">
-				<img src="img/intro_2.jpg" style="max-width: 100%;max-height: 100%;">
-			</div>
-			</div>
 		</div>
-	</div>
+
+		<div class="col-md-4">
+		<div class="d-block text-center block-6">
+		<div class="d-flex justify-content-center align-items-center mb-5">
+        <img src="img/intro_2.jpg" style="max-width:100%;max-height:100%">
+		</div>
+		</div>
+		</div>
+
+		<div class="aboutus col-md-4" style="margin-top:7%;margin-bottom:15%">
+		<div class="intro_content text-center">
+		<div class="intro_title">
+			<h3>ABOUT US</h3></div>
+						<div class="intro_text" style="letter-spacing:2px;">
+							Nestled within one of Mumbai’s old textile mills, The Venue is an ingredient-driven restaurant.<br>
+							The restaurant’s 14-course chef’s tasting menus - a first of its kind in<br> India – marry tradition and innovation
+							as the seasons change, so do the menus, defined by ingredients from the restaurant’s farm, foraging trips, and a network of local farmers.
+						</div>
+					</div>
+		</div>
+		</div>
 	</div>
 </div>
-	</div>
-</div>
+
+<!--<div class="parallax menu" id="course" 
+style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b1e763d45776e42e78d23c4/1541136765634-FW2LKHKY53OABRJGLHMD/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/SML_KOKO+April+20188700.jpg?format=1000w);
+;padding-top: 180px;padding-bottom: 180px;color: white;filter: grayscale(40%);">-->
 
 <div class="parallax menu" id="course" 
-style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b1e763d45776e42e78d23c4/1541136765634-FW2LKHKY53OABRJGLHMD/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/SML_KOKO+April+20188700.jpg?format=1000w);background-color: burlywood;padding-top: 180px;padding-bottom: 180px;color: white;">
+style="background-image: url(img/article1.jpeg);padding-top: 180px;padding-bottom: 180px;color: white;">
 
-	<div class="col-12 narrow text-center">
-		<h1>Discover Our Menu</h1>
-		<p class="lead"> Our talented team of chefs are seriously picky about our kitchen produce, using quality ingredients from fresh and local sources wherever possible. </p>
+	<div class="col-12 narrow text-center" >
+		<h1 >Discover Our Menu</h1>
+		<p class="lead" style="font-size: 30px;"><b>Our talented team of chefs are seriously picky about our kitchen produce, using quality ingredients from fresh and local sources wherever possible.</b> </p>
 		<a class="btn btn-secondary btn-md" href="order.php" target="_blank" style="background-color: #ceb829;color: black;">View Our Menu</a>
 	</div>
 </div>
 
 
-<div class="easytoorder" id="easy to order" style="background-color: #1f1c1c;color: white;">
+<div class="easytoorder" id="easy to order" style="background-color: white;color: #1f1c1c;">
 	<div class="container">
 		<div class="row">
 
 		<div class="col-md-4">
 		<div class="d-block text-center block-6 ">
 		<div class="d-flex justify-content-center align-items-center mb-5">
-		<span class="flaticon-choices"></span>
+		<span class="flaticon-choices" ></span>
 		</div>
-		<div class="media-body">
-		<h3 class="heading">Easy to Order</h3>
-		<p>Getting food delivered right at your doorstep anytime anywhere is easier than ever.</p>
+		<div class="media-body" >
+		<h3 class="heading" >Easy to Order</h3>
+		<p style="font-size: 20px">Getting food delivered right at your doorstep anytime anywhere is easier than ever.</p>
 		</div>
 		</div>
 		</div>
@@ -213,11 +268,11 @@ style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b1e7
 		<div class="col-md-4">
 		<div class="d-block text-center block-6 ">
 		<div class="d-flex justify-content-center align-items-center mb-5">
-		<span class="flaticon-delivery-man"></span>
+		<span class="flaticon-delivery-man" ></span>
 		</div>
 		<div class="media-body">
 		<h3 class="heading">Fastest Delivery</h3>
-		<p>For the times when you’re busy and too time-cramped to step out for lunch, We are here for you.</p>
+		<p style="font-size: 20px">For the times when you’re busy and too time-cramped to step out for lunch, We are here for you.</p>
 		</div>
 		</div>
 		</div>
@@ -228,7 +283,7 @@ style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b1e7
 	    </div>
 		<div class="media-body">
 		<h3 class="heading">Quality Food</h3>
-		<p>We set a high standard for our food quality with quality ingredients and an experienced cook.
+		<p style="font-size: 20px">We set a high standard for our food quality with quality ingredients and an experienced cook.
 		</p>
 		</div>
 		</div>
@@ -237,93 +292,97 @@ style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b1e7
 		</div>
 </div>
 
-<div class= "parallax reviews" id="reviews" style="background-image: url(img/7.jpg);color: white;background-repeat: no-repeat;background-size: cover;">
+
+<div class= "parallax reviews" id="reviews" 
+style="background-image: 
+url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide-to-restaurant-customer-satisfaction.jpg)
+;color:white;background-repeat: no-repeat;background-size: cover;padding-top:25px;">
 	<div class="container" >
 		<div class="row justify-content-center mb-5">
 		  <div class="col-md-7 text-center">
-			  <span class="subheading">Testimony</span>
-			<h2 class="mb-4">Customers Says</h2>
+			  <span class="subheading" style="font-size: 20px">Testimony</span>
+			<h1 class="mb-4">Customers Says</h1>
 		  </div>
 		</div>
 	  </div>
-
-	  <div class="container-wrap"> 
+      <br><br><br><br><br><br><br>
+	  <div class="container-wrap "> 
 		<div class="row d-flex no-gutters" >
-		  <div class="col-lg align-self-sm-end ">
-			<div class="testimony">
+		  <div class="col-lg align-self-sm-end">
+			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
 				  <p>“The food was fresh, properly prepared and a great value for the price. We highly recommend it. The breakfast buffet on Sunday was equally as good.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
-					<img src="img/person1.jpg" alt="">
+				  <i class="fas fa-user-circle" style="font-size:30px"></i>
 				  </div>
-				  <div class="name align-self-center">Kelly Louise <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Kelly Louise <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
 		  </div>
 		
 		  <div class="col-lg align-self-sm-end " >
-			<div class="testimony">
+			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
-				  <p>“A very friendly welcoming place to spend a couple of nights.  All personnel were very well trained, accommodating and helpful (all done with a smile).Food was delicious and the view was wonderful while dining. Thanks for doing such an outstanding job to make the stay so pleasurable. ”</p>
+				  <p>“A very friendly welcoming place to spend a couple of nights.  All personnel were very well trained, accommodating and helpful. Food was delicious and the view was wonderful while dining.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
-					<img src="img/person2.jpg" alt="">
+				  <i class="fas fa-user-circle" style="font-size:30px"></i>
 				  </div>
-				  <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
-		  </div>
+          </div>
 		
 		  <div class="col-lg align-self-sm-end" style="color: gray;">
-			<div class="testimony">
+			<div class="testimony" style="font-size: 18px">
 			   <blockquote>
-				  <p>“Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small  line of blind text by the name. ”</p>
+				  <p>“Great service. Wide selection of good quality, delicious food. Very veggie friendly. Excellent value & a lot less pricey than far inferior establishments.”</p>
 				</blockquote>
 				<div class="person d-flex mt-4">
 				  <div class="image mr-3 align-self-center">
-					<img src="img/team/team1.png" alt="">
+				  <i class="fas fa-user-circle" style="font-size:30px"></i> 
 				  </div>
-				  <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
-				</div>
-			</div>
-		  </div>
-		
-		  <div class="col-lg align-self-sm-end">
-			<div class="testimony overlay">
-			   <blockquote>
-				  <p>“The food was fresh, properly prepared and a great value for the price. We highly recommend it. The breakfast buffet on Sunday was equally as good.”</p>
-				</blockquote>
-				<div class="person d-flex mt-4">
-				  <div class="image mr-3 align-self-center">
-					<img src="img/team/team2.png" alt="">
-				  </div>
-				  <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
 		  </div>
 		
 		  <div class="col-lg align-self-sm-end" >
-			<div class="testimony">
+			<div class="testimony" style="font-size: 18px">
 			  <blockquote>
-				<p>“Everything was handled with efficiency and attention to every detail was given. Food was delicious and the view was wonderful while dining. Thanks for doing such an outstanding job to make the stay so pleasurable.</p>
+				<p>“Everything was handled with efficiency and attention to every detail was given. Food was delicious and the view was wonderful while dining. Thanks for doing such an outstanding job.</p>
 			  </blockquote>
 			  <div class="person d-flex mt-4">
 				<div class="image mr-3 align-self-center">
-				  <img src="img/person2.jpg" alt="">
+				<i class="fas fa-user-circle" style="font-size:30px"></i>
 				</div>
-				<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				<div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 			  </div>
 			</div>
 		  </div>
-		
+
+		  <div class="col-lg align-self-sm-end">
+			<div class="testimony" style="font-size: 18px">
+			   <blockquote>
+				  <p>“Pleasantly surprised with their dinner service - a menu full of intriguing entrees, the food  ordered was excellent food .”</p>
+				</blockquote>
+				<div class="person d-flex mt-4">
+				  <div class="image mr-3 align-self-center">
+				  <i class="fas fa-user-circle" style="font-size:30px"></i>
+				  </div>
+				  <div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
+				</div>
+			</div>
+		  </div>
+				
 		</div>
 	  </div>
 </div>
 
-<div class= "footer" id="footer" style="text-align: center;padding-top: 7%;">
+<div class= "footer" id="footer" style="text-align: center;padding-top: 7%;font-size: 20px;background-color:white;color:black;">
 
 	<div class="container">
 		<div class="row">
