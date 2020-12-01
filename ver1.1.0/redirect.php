@@ -3,12 +3,20 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+       
+        $link = mysqli_connect("localhost", "root", "", "reservation");
+
+       
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
@@ -53,92 +61,30 @@
 				</li>
 				<li class="nav-item" style="padding-right:15px">
 					<a class="nav-link" href="#" >CART</a>
-				  </li>
+				  </li>-->
 			  </ul>
 			</div>
 			</div>
-			</nav>-->
+			</nav>
 			
-            <?php
-            if(isset($_SESSION['login_user1'])){
-            ?>
-                <span class="nav navbar-nav navbar-right" style="color: black;">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome <?php echo $_SESSION['login_user1']; ?> </a></li>
-                    <li><a href="myrestaurant.php">MANAGER CONTROL PANEL</a></li>
-                    <li><a href="logout_m.php"><span class="glyphicon glyphicon-log-out"></span> Log Out </a></li>
-                </span>
-            <?php 
-            }
-
-
-            //USER WHO HAS LOGGED IN
-            else if (isset($_SESSION['login_user2'])) {
-            ?>
-                    
-
-                    <li class="nav-item" style="padding-right:15px">
-                        <a class="nav-link" href="logout_u.php">LOG OUT</a>
-                </li>  
-                
-                <li class="nav-item" style="padding-right:15px">
-                <a class="nav-link disabled" href="#"> <b style="color:#ceb829">Signed in as <?php echo $_SESSION['login_user2']; ?> </b></a>
-                </li>
-
-                <li class="nav-item clickable" onclick="toggleCart()">
-                <span class="nav-link active">  <img src="https://www.freeiconspng.com/uploads/grocery-basket-icon-1.png" height="30px" width="30px" > 
-                    (<?php
-                    if(isset($_SESSION["cart"])){
-                    $count = count($_SESSION["cart"]); 
-                    echo "$count"; 
-                    }
-                    else
-                    echo "0";
-                    ?>) 
-                </span>
-                    </li>
-
-                
-                </ul>
-                </div>
-                </nav>
-                <?php        
-            }
-                //USER WHO HASN'T LOGGED IN
-            else {
-            ?>
-
-            <li class="nav-item" style="padding-right:15px">
-                <a class="nav-link" href="customerlogin.php">LOG IN</a>
-            </li>
-
-            <li class="nav-item" style="padding-right:15px">
-                <a class="nav-link" href="#">CART</a>
-            </li>
-            </ul>
-            </div>
-
-                </div>
-                </nav>
-                <?php
-            }
-            ?>
-
-
+            
             <div class="para2">
                 <div class="caption">
-                    <span class="text-block"><b>R</b>ESER<b>V</b>ATI<b>O</b>N</span>
+                    <span class="text-block" style="font-size:4vw;"><b>R</b>ESER<b>V</b>ATI<b>O</b>N</span>
                 </div>
             </div>
     </div>  
     
-    <div style="height:200px;background-color:#BDC3C7"></div>  
+    <div style="height:200px;background-color:#BDC3C7"></div> 
+
+    
 
     
     <div class="container">
         <div class="row" >
             <div class="span4">
             <br><br>
-                <p>WE HAVE SUCCESSFULLY RESERVED A TABLE FOR YOU</p>
+                <p><em>WE HAVE SUCCESSFULLY RESERVED A TABLE FOR YOU</em></p>
                 <br><br><h2>DAYS OPEN</h2>
                 <p>MONDAY - FRIDAY</p>
                 <p>Events Conducted Usually On Sunday's</p>
@@ -149,8 +95,32 @@
 
             </div>
         </div><br><br><br>
-    </div>    
+    </div>  
     
+    <div style="height:100px;background-color:#BDC3C7">
+        <form  action="" method="POST">
+            <div class="content" style="text-align:center;background-color:black;height:100px;margin:10px 200px 100px 200px;padding-bottom:100px">
+                <span style="text-align:center;letter-spacing:2px;color:white">If You Want To Cancel Your Booking Enter The ID Provided In Your Mail</span><br><br>
+                <input placeholder="ENTER ID" type="text" name="id" class="id" required >
+                <button type="submit" value="submit" name="submit" class="btn"style="padding-top:0px">Cancel</button>
+                <?php
+                                
+                                        if(isset($_POST['submit'])){
+                                        
+                                            
+                                            $ID = $_POST['id'];
+                                            $ID = mysqli_real_escape_string($link,$_POST['id']);
+                                        
+                                            $query="DELETE FROM bookingtable WHERE bookingID='$ID';";
+                                            $result = mysqli_query($link, $query); 
+                                            echo"<script>alert('This booking is SUCCESSFULLY cancelled')</script>";
+                                        }    
+                ?>                            
+            </div>
+        </form> 
+    </div> 
+    
+    <br><br><br>
     <p style="background-color: white;color:black;text-align: center;letter-spacing: 2px;">Kindly be present 5 minutes before the reservation time</p>
      <footer>
         <br><br><br>
@@ -200,7 +170,19 @@
                         </div><br><br>
                     </div>
      </footer>  
-    
+     <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script> 
+     <script src="scripts/jquery-3.3.1.min.js "></script>
+        <script src="scripts/script.js "></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
     
 </body>

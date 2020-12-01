@@ -173,7 +173,7 @@ else {
 			  </div>
 			
 			<div class="carousel-item " style="opacity:0.9">
-				<img src="https://luxurylaunches.com/wp-content/uploads/2015/08/Nusantao_Doha_-1.jpg"  alt="Los Angeles" style="height:100%;width: 100%;">
+				<img src="img/toast.jpeg"  alt="Los Angeles" style="height:100%;width: 100%;">
 			</div>
 
 			  <div class="carousel-item " style="opacity:0.9">
@@ -190,10 +190,10 @@ else {
 
 			<div class="carousel-caption text-center" >
 				<div style="">
-				<div style="font-size: 33px;line-height: 2;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif;">The Venue</div>
+				<div style="font-size: 33px;line-height: 2;color: #FFFFFF;font-family: 'PT Sans Narrow', sans-serif; text-shadow: 1px 1px 5px black;">The Venue</div>
 				<div class="box-default-decor"></div>
 				<!--<div style="font-size: 14px;text-transform: uppercase;color: #FFFFFF;letter-spacing: 0.610em;line-height: 0.80;margin-top: 12px;text-align:center">restaurant</div>	-->
-				<p class="lead" style="font-size:28px;line-height: 2;"><b>Our restaurant offers full-service dining with breathtaking views seen from our indoor covered patio and our outdoor sundeck.</b> </p>
+				<p class="lead" style="font-size:28px;line-height: 2; text-shadow: 1px 1px 5px black;"><b>Our restaurant offers full-service dining with breathtaking views seen from our indoor covered patio and our outdoor sundeck.</b> </p>
 				</div>
               </div>
 			  </div>
@@ -239,7 +239,7 @@ style="background-image: url(https://images.squarespace-cdn.com/content/v1/5b1e7
 ;padding-top: 180px;padding-bottom: 180px;color: white;filter: grayscale(40%);">-->
 
 <div class="parallax menu" id="course" 
-style="background-image: url(img/article1.jpg);padding-top: 180px;padding-bottom: 180px;color: white;">
+style="background-image: url(img/article1.jpeg);padding-top: 180px;padding-bottom: 180px;color: white;">
 
 	<div class="col-12 narrow text-center" >
 		<h1 >Discover Our Menu</h1>
@@ -317,7 +317,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 				  <div class="image mr-3 align-self-center">
 				  <i class="fas fa-user-circle" style="font-size:30px"></i>
 				  </div>
-				  <div class="name align-self-center">Kelly Louise <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Kelly Louise <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
 		  </div>
@@ -331,7 +331,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 				  <div class="image mr-3 align-self-center">
 				  <i class="fas fa-user-circle" style="font-size:30px"></i>
 				  </div>
-				  <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
           </div>
@@ -345,7 +345,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 				  <div class="image mr-3 align-self-center">
 				  <i class="fas fa-user-circle" style="font-size:30px"></i> 
 				  </div>
-				  <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
 		  </div>
@@ -359,7 +359,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 				<div class="image mr-3 align-self-center">
 				<i class="fas fa-user-circle" style="font-size:30px"></i>
 				</div>
-				<div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				<div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 			  </div>
 			</div>
 		  </div>
@@ -373,7 +373,7 @@ url(https://www.reviewtrackers.com/wp-content/uploads/blog-hero_the-modern-guide
 				  <div class="image mr-3 align-self-center">
 				  <i class="fas fa-user-circle" style="font-size:30px"></i>
 				  </div>
-				  <div class="name align-self-center">Louise Kelly <span class="position">Illustrator Designer</span></div>
+				  <div class="name align-self-center">Lorem Ipsum <span class="position">Lorem Ipsum</span></div>
 				</div>
 			</div>
 		  </div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 10:00 PM
+-- Generation Time: Dec 01, 2020 at 06:14 AM
 -- Server version: 10.4.16-MariaDB
--- PHP Version: 7.3.24
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,13 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bookingtable` (
-  `bookingID` int(11) NOT NULL,
+  `bookingID` varchar(50) NOT NULL,
   `bookingType` varchar(100) NOT NULL,
   `numPeople` varchar(20) NOT NULL,
   `bookingDate` varchar(50) NOT NULL,
   `bookingTime` varchar(50) NOT NULL,
   `bookingFName` varchar(100) NOT NULL,
   `bookingLName` varchar(100) DEFAULT NULL,
+  `emailID` varchar(50) NOT NULL,
   `bookingPNumber` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,11 +43,8 @@ CREATE TABLE `bookingtable` (
 -- Dumping data for table `bookingtable`
 --
 
-INSERT INTO `bookingtable` (`bookingID`, `bookingType`, `numPeople`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `bookingPNumber`) VALUES
-(14, 'Private-hall', '2', '2-12', '24-00', 'm', 'm', '98374859673'),
-(15, 'Formal', '4', '1-12', '18-00', 'Mansi', 'Ayer', '9854637456'),
-(16, 'Casual', '6', '30-11', '21-00', 'S', 'Bala', '93746583748'),
-(17, 'Private-hall', '10', '27-11', '12-00', 'm', 'm', '5');
+INSERT INTO `bookingtable` (`bookingID`, `bookingType`, `numPeople`, `bookingDate`, `bookingTime`, `bookingFName`, `bookingLName`, `emailID`, `bookingPNumber`) VALUES
+('la5fc51e03df3bd', 'Casual', '6', '4-12-2020', '18-00', 'Diana', 'v', 'felicitaa168@gmail.com', '23124454536');
 
 -- --------------------------------------------------------
 
@@ -57,34 +55,34 @@ INSERT INTO `bookingtable` (`bookingID`, `bookingType`, `numPeople`, `bookingDat
 CREATE TABLE `tablelist` (
   `table_id` int(11) NOT NULL,
   `t_type` varchar(50) NOT NULL,
-  `people` varchar(20) NOT NULL
+  `capacity` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tablelist`
 --
 
-INSERT INTO `tablelist` (`table_id`, `t_type`, `people`) VALUES
-(1, 'Formal', 'Table for 2'),
-(2, 'Formal', 'Table for 3'),
-(3, 'Formal', 'Table for 4'),
-(4, 'Formal', 'Table for 6'),
-(5, 'Formal', 'Table for 10'),
-(6, 'Casual', 'Table for 2'),
-(7, 'Casual', 'Table for 3'),
-(8, 'Casual', 'Table for 4'),
-(9, 'Casual', 'Table for 6'),
-(10, 'Casual', 'Table for 10'),
-(11, 'Outdoor', 'Table for 2'),
-(12, 'Outdoor', 'Table for 3'),
-(13, 'Outdoor', 'Table for 4'),
-(14, 'Outdoor', 'Table for 6'),
-(15, 'Outdoor', 'Table for 10'),
-(16, 'Private Room', 'Table for 2'),
-(17, 'Private Room', 'Table for 3'),
-(18, 'Private Room', 'Table for 4'),
-(19, 'Private Room', 'Table for 6'),
-(20, 'Private Room', 'Table for 10');
+INSERT INTO `tablelist` (`table_id`, `t_type`, `capacity`) VALUES
+(1, 'Formal', '2'),
+(2, 'Formal', '3'),
+(3, 'Formal', '4'),
+(4, 'Formal', '6'),
+(5, 'Formal', '10'),
+(6, 'Casual', '2'),
+(7, 'Casual', '3'),
+(8, 'Casual', '4'),
+(9, 'Casual', '6'),
+(10, 'Casual', '10'),
+(11, 'Outdoor', '2'),
+(12, 'Outdoor', '3'),
+(13, 'Outdoor', '4'),
+(14, 'Outdoor', '6'),
+(15, 'Outdoor', '10'),
+(16, 'Private Room', '2'),
+(17, 'Private Room', '3'),
+(18, 'Private Room', '4'),
+(19, 'Private Room', '6'),
+(20, 'Private Room', '10');
 
 --
 -- Indexes for dumped tables
@@ -99,28 +97,6 @@ ALTER TABLE `bookingtable`
   ADD KEY `bookingID_2` (`bookingID`),
   ADD KEY `bookingID_3` (`bookingID`),
   ADD KEY `bookingID_4` (`bookingID`);
-
---
--- Indexes for table `tablelist`
---
-ALTER TABLE `tablelist`
-  ADD PRIMARY KEY (`table_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `bookingtable`
---
-ALTER TABLE `bookingtable`
-  MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `tablelist`
---
-ALTER TABLE `tablelist`
-  MODIFY `table_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
